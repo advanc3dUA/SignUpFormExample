@@ -11,7 +11,7 @@
         <!--Sign Up-->
         <scene sceneID="QhB-UI-6o4">
             <objects>
-                <tableViewController id="Us5-Zd-yFF" sceneMemberID="viewController">
+                <tableViewController id="Us5-Zd-yFF" customClass="SignUpTableViewController" customModule="SignUpFormExample" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="cWC-Ns-UU3">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -33,6 +33,9 @@
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="emailDidChanged:" destination="Us5-Zd-yFF" eventType="editingChanged" id="ScO-br-CXr"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -57,6 +60,9 @@
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="passwordDidChanged:" destination="Us5-Zd-yFF" eventType="editingChanged" id="Yiq-bg-8lV"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -81,6 +87,9 @@
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="passwordConfirmationDidChanged:" destination="Us5-Zd-yFF" eventType="editingChanged" id="5PD-rd-g4h"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -110,6 +119,9 @@
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="kIl-qq-gFB">
                                                     <rect key="frame" x="282" y="6.6666666666666679" width="51" height="31.000000000000004"/>
+                                                    <connections>
+                                                        <action selector="agreeSwitchDidChanged:" destination="Us5-Zd-yFF" eventType="valueChanged" id="8qj-dn-5kE"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
@@ -139,6 +151,9 @@
                                                     </constraints>
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                     <state key="normal" title="Sign Up"/>
+                                                    <connections>
+                                                        <action selector="signUpTapped:" destination="Us5-Zd-yFF" eventType="touchUpInside" id="CZK-gQ-qzD"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -158,6 +173,13 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Sign Up" id="PPI-p5-UGK"/>
+                    <connections>
+                        <outlet property="agreeTermsSwitch" destination="kIl-qq-gFB" id="AQ2-LV-1lW"/>
+                        <outlet property="emailAddressField" destination="N7h-QH-YuR" id="hY8-fr-ldD"/>
+                        <outlet property="passwordConfirmationField" destination="zQG-ZJ-pUB" id="h1O-0m-mpb"/>
+                        <outlet property="passwordField" destination="N6b-QF-U2p" id="6S4-Vm-UgT"/>
+                        <outlet property="signUpButton" destination="tfw-2q-sQr" id="D47-cf-mqC"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gxc-Sn-jYc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
