@@ -43,14 +43,15 @@ class SignUpTableViewController: UITableViewController {
             .store(in: &cancellables)
     }
     
-    //MARK: - Checking methods
-    private func emailIsValid(_ email: String) -> Bool {
-        email.contains("@") && email.contains(".")
-    }
-    
     //MARK: - Publishers
+    
+    //Email check
     private var formIsValid: AnyPublisher<Bool, Never> {
-        emailIsValid
+        Publishers.CombineLatest(emailIsValid,
+                                 passwordAndConfirmationIsValid
+                                )
+        .map { $0.0 && $0.1 }
+        .eraseToAnyPublisher()
     }
     
     private var emailIsValid: AnyPublisher<Bool, Never> {
@@ -60,6 +61,31 @@ class SignUpTableViewController: UITableViewController {
             .eraseToAnyPublisher()
     }
     
+    private func emailIsValid(_ email: String) -> Bool {
+        email.contains("@") && email.contains(".")
+    }
+    
+    //Password check
+    private var passwordAndConfirmationIsValid: AnyPublisher<Bool, Never> {
+        passwordIsValid.combineLatest(passwordConfirmationIsVaild)
+            .map { valid, confirmed in
+                valid && confirmed
+            }
+            .eraseToAnyPublisher()
+    }
+    private var passwordIsValid: AnyPublisher<Bool, Never> {
+        passwordSubject
+            .map { $0 != "password" && $0.count >= 8 }
+            .eraseToAnyPublisher()
+    }
+    
+    private var passwordConfirmationIsVaild: AnyPublisher<Bool, Never> {
+        passwordSubject.combineLatest(passwordConfirmationSubject)
+            .map { password, confirmation in
+                password == confirmation
+            }
+            .eraseToAnyPublisher()
+    }
     
     //MARK: - Actions
     
