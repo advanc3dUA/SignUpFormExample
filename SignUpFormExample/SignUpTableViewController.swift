@@ -41,6 +41,16 @@ class SignUpTableViewController: UITableViewController {
         formIsValid
             .assign(to: \.isEnabled, on: signUpButton)
             .store(in: &cancellables)
+        
+        emailIsValid
+            .map { $0 ? UIColor.label : UIColor.systemRed }
+            .assign(to: \.textColor, on: emailAddressField)
+            .store(in: &cancellables)
+        
+        passwordConfirmationIsVaild
+            .map{ $0 ? UIColor.label : UIColor.systemRed }
+            .assign(to: \.textColor, on: passwordConfirmationField)
+            .store(in: &cancellables)
     }
     
     //MARK: - Publishers
@@ -57,12 +67,12 @@ class SignUpTableViewController: UITableViewController {
     
     private var emailIsValid: AnyPublisher<Bool, Never> {
         emailSubject
-            .map { [weak self] in self?.emailIsValid($0) }
+            .map { [weak self] in self?.isValidEmail($0) }
             .replaceNil(with: false)
             .eraseToAnyPublisher()
     }
     
-    private func emailIsValid(_ email: String) -> Bool {
+    private func isValidEmail(_ email: String) -> Bool {
         email.contains("@") && email.contains(".")
     }
     
