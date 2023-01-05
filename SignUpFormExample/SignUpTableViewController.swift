@@ -47,10 +47,11 @@ class SignUpTableViewController: UITableViewController {
     
     //Email check
     private var formIsValid: AnyPublisher<Bool, Never> {
-        Publishers.CombineLatest(emailIsValid,
-                                 passwordAndConfirmationIsValid
-                                )
-        .map { $0.0 && $0.1 }
+        Publishers.CombineLatest3(emailIsValid,
+                                  passwordAndConfirmationIsValid,
+                                  agreeTermsSubject
+        )
+        .map { $0.0 && $0.1 && $0.2 }
         .eraseToAnyPublisher()
     }
     
@@ -102,7 +103,7 @@ class SignUpTableViewController: UITableViewController {
     }
     
     @IBAction func agreeSwitchDidChanged(_ sender: UISwitch) {
-        agreeTermsSubject.send(agreeTermsSwitch.isEnabled)
+        agreeTermsSubject.send(agreeTermsSwitch.isOn)
     }
     
     @IBAction func signUpTapped(_ sender: BigButton) {
