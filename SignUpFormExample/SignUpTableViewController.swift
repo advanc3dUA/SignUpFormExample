@@ -38,24 +38,34 @@ class SignUpTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        emailAddressField.isSecureTextEntry = false
+        
         formIsValid
             .assign(to: \.isEnabled, on: signUpButton)
             .store(in: &cancellables)
         
-        emailIsValid
-            .map { $0 ? UIColor.label : UIColor.systemRed }
-            .assign(to: \.textColor, on: emailAddressField)
-            .store(in: &cancellables)
+        setValidColor(field: emailAddressField, publisher: emailIsValid)
+        setValidColor(field: passwordField, publisher: passwordIsValid)
+        setValidColor(field: passwordConfirmationField, publisher: passwordConfirmationIsVaild)
         
-        passwordConfirmationIsVaild
+        formattedEmailAddress
+            .filter { [unowned self] in $0 != emailSubject.value }
+            .map { $0 as String? }
+            .assign(to: \.text, on: emailAddressField)
+            .store(in: &cancellables)
+    }
+    
+    //Coloring fields by rules
+    private func setValidColor<P: Publisher>(field: UITextField, publisher: P) where P.Output == Bool, P.Failure == Never {
+        publisher
             .map{ $0 ? UIColor.label : UIColor.systemRed }
-            .assign(to: \.textColor, on: passwordConfirmationField)
+            .assign(to: \.textColor, on: field)
             .store(in: &cancellables)
     }
     
     //MARK: - Publishers
-    
-    //Email check
+
+    //Form check
     private var formIsValid: AnyPublisher<Bool, Never> {
         Publishers.CombineLatest3(emailIsValid,
                                   passwordAndConfirmationIsValid,
@@ -64,9 +74,17 @@ class SignUpTableViewController: UITableViewController {
         .map { $0.0 && $0.1 && $0.2 }
         .eraseToAnyPublisher()
     }
+
+    //Email check
+    private var formattedEmailAddress: AnyPublisher<String, Never> {
+        emailSubject
+            .map { $0.lowercased() }
+            .map { $0.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) }
+            .eraseToAnyPublisher()
+    }
     
     private var emailIsValid: AnyPublisher<Bool, Never> {
-        emailSubject
+        formattedEmailAddress
             .map { [weak self] in self?.isValidEmail($0) }
             .replaceNil(with: false)
             .eraseToAnyPublisher()
