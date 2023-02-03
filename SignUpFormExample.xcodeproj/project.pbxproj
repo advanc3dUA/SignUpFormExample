@@ -7,31 +7,64 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BF863F012965927B003A6DEC /* BigButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF863F002965927A003A6DEC /* BigButton.swift */; };
-		BF863F03296595F1003A6DEC /* SignUpTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF863F02296595F1003A6DEC /* SignUpTableViewController.swift */; };
-		BF86E8B029645AFC00C4AC0F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF86E8AF29645AFC00C4AC0F /* AppDelegate.swift */; };
-		BF86E8B229645AFC00C4AC0F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF86E8B129645AFC00C4AC0F /* SceneDelegate.swift */; };
-		BF86E8B729645AFC00C4AC0F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF86E8B529645AFC00C4AC0F /* Main.storyboard */; };
-		BF86E8B929645AFE00C4AC0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF86E8B829645AFE00C4AC0F /* Assets.xcassets */; };
-		BF86E8BC29645AFE00C4AC0F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF86E8BA29645AFE00C4AC0F /* LaunchScreen.storyboard */; };
-		BF9F279A2965886B00D34A57 /* FormTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9F27992965886B00D34A57 /* FormTextField.swift */; };
+		BF9FE59F298D0BC900BB07DC /* SignAppFormExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9FE59E298D0BC900BB07DC /* SignAppFormExampleTests.swift */; };
+		BF9FE5A9298D0BCA00BB07DC /* SignAppFormExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9FE5A8298D0BCA00BB07DC /* SignAppFormExampleUITests.swift */; };
+		BF9FE5AB298D0BCA00BB07DC /* SignAppFormExampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9FE5AA298D0BCA00BB07DC /* SignAppFormExampleUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BF9FE59B298D0BC900BB07DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF86E8A429645AFC00C4AC0F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BF9FE584298D0BC700BB07DC;
+			remoteInfo = SignAppFormExample;
+		};
+		BF9FE5A5298D0BC900BB07DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF86E8A429645AFC00C4AC0F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BF9FE584298D0BC700BB07DC;
+			remoteInfo = SignAppFormExample;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		BF863F002965927A003A6DEC /* BigButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigButton.swift; sourceTree = "<group>"; };
 		BF863F02296595F1003A6DEC /* SignUpTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpTableViewController.swift; sourceTree = "<group>"; };
-		BF86E8AC29645AFC00C4AC0F /* SignUpFormExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SignUpFormExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF86E8AF29645AFC00C4AC0F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF86E8B129645AFC00C4AC0F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		BF86E8B629645AFC00C4AC0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BF86E8B829645AFE00C4AC0F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF86E8BB29645AFE00C4AC0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF86E8BD29645AFE00C4AC0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF99D9562977FD780079CD22 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		BF99D958297813E20079CD22 /* Publisher+mapToFieldInputColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+mapToFieldInputColor.swift"; sourceTree = "<group>"; };
 		BF9F27992965886B00D34A57 /* FormTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTextField.swift; sourceTree = "<group>"; };
+		BF9FE585298D0BC700BB07DC /* SignAppFormExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SignAppFormExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF9FE59A298D0BC900BB07DC /* SignAppFormExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SignAppFormExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF9FE59E298D0BC900BB07DC /* SignAppFormExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignAppFormExampleTests.swift; sourceTree = "<group>"; };
+		BF9FE5A4298D0BC900BB07DC /* SignAppFormExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SignAppFormExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF9FE5A8298D0BCA00BB07DC /* SignAppFormExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignAppFormExampleUITests.swift; sourceTree = "<group>"; };
+		BF9FE5AA298D0BCA00BB07DC /* SignAppFormExampleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignAppFormExampleUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		BF86E8A929645AFC00C4AC0F /* Frameworks */ = {
+		BF9FE582298D0BC700BB07DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF9FE597298D0BC900BB07DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF9FE5A1298D0BC900BB07DC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -45,6 +78,8 @@
 			isa = PBXGroup;
 			children = (
 				BF86E8AE29645AFC00C4AC0F /* SignUpFormExample */,
+				BF9FE59D298D0BC900BB07DC /* SignAppFormExampleTests */,
+				BF9FE5A7298D0BCA00BB07DC /* SignAppFormExampleUITests */,
 				BF86E8AD29645AFC00C4AC0F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -52,7 +87,9 @@
 		BF86E8AD29645AFC00C4AC0F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BF86E8AC29645AFC00C4AC0F /* SignUpFormExample.app */,
+				BF9FE585298D0BC700BB07DC /* SignAppFormExample.app */,
+				BF9FE59A298D0BC900BB07DC /* SignAppFormExampleTests.xctest */,
+				BF9FE5A4298D0BC900BB07DC /* SignAppFormExampleUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -64,6 +101,8 @@
 				BF86E8B129645AFC00C4AC0F /* SceneDelegate.swift */,
 				BF86E8B529645AFC00C4AC0F /* Main.storyboard */,
 				BF863F02296595F1003A6DEC /* SignUpTableViewController.swift */,
+				BF99D9562977FD780079CD22 /* SignUpViewModel.swift */,
+				BF99D958297813E20079CD22 /* Publisher+mapToFieldInputColor.swift */,
 				BF863F002965927A003A6DEC /* BigButton.swift */,
 				BF9F27992965886B00D34A57 /* FormTextField.swift */,
 				BF86E8B829645AFE00C4AC0F /* Assets.xcassets */,
@@ -73,25 +112,78 @@
 			path = SignUpFormExample;
 			sourceTree = "<group>";
 		};
+		BF9FE59D298D0BC900BB07DC /* SignAppFormExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				BF9FE59E298D0BC900BB07DC /* SignAppFormExampleTests.swift */,
+			);
+			path = SignAppFormExampleTests;
+			sourceTree = "<group>";
+		};
+		BF9FE5A7298D0BCA00BB07DC /* SignAppFormExampleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BF9FE5A8298D0BCA00BB07DC /* SignAppFormExampleUITests.swift */,
+				BF9FE5AA298D0BCA00BB07DC /* SignAppFormExampleUITestsLaunchTests.swift */,
+			);
+			path = SignAppFormExampleUITests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BF86E8AB29645AFC00C4AC0F /* SignUpFormExample */ = {
+		BF9FE584298D0BC700BB07DC /* SignAppFormExample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BF86E8C029645AFE00C4AC0F /* Build configuration list for PBXNativeTarget "SignUpFormExample" */;
+			buildConfigurationList = BF9FE5B2298D0BCA00BB07DC /* Build configuration list for PBXNativeTarget "SignAppFormExample" */;
 			buildPhases = (
-				BF86E8A829645AFC00C4AC0F /* Sources */,
-				BF86E8A929645AFC00C4AC0F /* Frameworks */,
-				BF86E8AA29645AFC00C4AC0F /* Resources */,
+				BF9FE581298D0BC700BB07DC /* Sources */,
+				BF9FE582298D0BC700BB07DC /* Frameworks */,
+				BF9FE583298D0BC700BB07DC /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = SignUpFormExample;
-			productName = SignUpFormExample;
-			productReference = BF86E8AC29645AFC00C4AC0F /* SignUpFormExample.app */;
+			name = SignAppFormExample;
+			productName = SignAppFormExample;
+			productReference = BF9FE585298D0BC700BB07DC /* SignAppFormExample.app */;
 			productType = "com.apple.product-type.application";
+		};
+		BF9FE599298D0BC900BB07DC /* SignAppFormExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF9FE5B3298D0BCA00BB07DC /* Build configuration list for PBXNativeTarget "SignAppFormExampleTests" */;
+			buildPhases = (
+				BF9FE596298D0BC900BB07DC /* Sources */,
+				BF9FE597298D0BC900BB07DC /* Frameworks */,
+				BF9FE598298D0BC900BB07DC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BF9FE59C298D0BC900BB07DC /* PBXTargetDependency */,
+			);
+			name = SignAppFormExampleTests;
+			productName = SignAppFormExampleTests;
+			productReference = BF9FE59A298D0BC900BB07DC /* SignAppFormExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BF9FE5A3298D0BC900BB07DC /* SignAppFormExampleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF9FE5B4298D0BCA00BB07DC /* Build configuration list for PBXNativeTarget "SignAppFormExampleUITests" */;
+			buildPhases = (
+				BF9FE5A0298D0BC900BB07DC /* Sources */,
+				BF9FE5A1298D0BC900BB07DC /* Frameworks */,
+				BF9FE5A2298D0BC900BB07DC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BF9FE5A6298D0BC900BB07DC /* PBXTargetDependency */,
+			);
+			name = SignAppFormExampleUITests;
+			productName = SignAppFormExampleUITests;
+			productReference = BF9FE5A4298D0BC900BB07DC /* SignAppFormExampleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -103,8 +195,16 @@
 				LastSwiftUpdateCheck = 1410;
 				LastUpgradeCheck = 1410;
 				TargetAttributes = {
-					BF86E8AB29645AFC00C4AC0F = {
+					BF9FE584298D0BC700BB07DC = {
 						CreatedOnToolsVersion = 14.1;
+					};
+					BF9FE599298D0BC900BB07DC = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = BF9FE584298D0BC700BB07DC;
+					};
+					BF9FE5A3298D0BC900BB07DC = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = BF9FE584298D0BC700BB07DC;
 					};
 				};
 			};
@@ -121,38 +221,76 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BF86E8AB29645AFC00C4AC0F /* SignUpFormExample */,
+				BF9FE584298D0BC700BB07DC /* SignAppFormExample */,
+				BF9FE599298D0BC900BB07DC /* SignAppFormExampleTests */,
+				BF9FE5A3298D0BC900BB07DC /* SignAppFormExampleUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		BF86E8AA29645AFC00C4AC0F /* Resources */ = {
+		BF9FE583298D0BC700BB07DC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF86E8BC29645AFE00C4AC0F /* LaunchScreen.storyboard in Resources */,
-				BF86E8B929645AFE00C4AC0F /* Assets.xcassets in Resources */,
-				BF86E8B729645AFC00C4AC0F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF9FE598298D0BC900BB07DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF9FE5A2298D0BC900BB07DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		BF86E8A829645AFC00C4AC0F /* Sources */ = {
+		BF9FE581298D0BC700BB07DC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF863F03296595F1003A6DEC /* SignUpTableViewController.swift in Sources */,
-				BF86E8B029645AFC00C4AC0F /* AppDelegate.swift in Sources */,
-				BF86E8B229645AFC00C4AC0F /* SceneDelegate.swift in Sources */,
-				BF863F012965927B003A6DEC /* BigButton.swift in Sources */,
-				BF9F279A2965886B00D34A57 /* FormTextField.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF9FE596298D0BC900BB07DC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF9FE59F298D0BC900BB07DC /* SignAppFormExampleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF9FE5A0298D0BC900BB07DC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF9FE5AB298D0BCA00BB07DC /* SignAppFormExampleUITestsLaunchTests.swift in Sources */,
+				BF9FE5A9298D0BCA00BB07DC /* SignAppFormExampleUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BF9FE59C298D0BC900BB07DC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BF9FE584298D0BC700BB07DC /* SignAppFormExample */;
+			targetProxy = BF9FE59B298D0BC900BB07DC /* PBXContainerItemProxy */;
+		};
+		BF9FE5A6298D0BC900BB07DC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BF9FE584298D0BC700BB07DC /* SignAppFormExample */;
+			targetProxy = BF9FE5A5298D0BC900BB07DC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		BF86E8B529645AFC00C4AC0F /* Main.storyboard */ = {
@@ -288,7 +426,7 @@
 			};
 			name = Release;
 		};
-		BF86E8C129645AFE00C4AC0F /* Debug */ = {
+		BF9FE5AC298D0BCA00BB07DC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -297,19 +435,18 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Z4DAU59V98;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SignUpFormExample/Info.plist;
+				INFOPLIST_FILE = SignAppFormExample/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ua.advanc3d.SignUpFormExample;
+				PRODUCT_BUNDLE_IDENTIFIER = ua.advanc3d.SignAppFormExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -317,7 +454,7 @@
 			};
 			name = Debug;
 		};
-		BF86E8C229645AFE00C4AC0F /* Release */ = {
+		BF9FE5AD298D0BCA00BB07DC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -326,23 +463,94 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Z4DAU59V98;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SignUpFormExample/Info.plist;
+				INFOPLIST_FILE = SignAppFormExample/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ua.advanc3d.SignUpFormExample;
+				PRODUCT_BUNDLE_IDENTIFIER = ua.advanc3d.SignAppFormExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BF9FE5AE298D0BCA00BB07DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z4DAU59V98;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ua.advanc3d.SignAppFormExampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SignAppFormExample.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SignAppFormExample";
+			};
+			name = Debug;
+		};
+		BF9FE5AF298D0BCA00BB07DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z4DAU59V98;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ua.advanc3d.SignAppFormExampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SignAppFormExample.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SignAppFormExample";
+			};
+			name = Release;
+		};
+		BF9FE5B0298D0BCA00BB07DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z4DAU59V98;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ua.advanc3d.SignAppFormExampleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SignAppFormExample;
+			};
+			name = Debug;
+		};
+		BF9FE5B1298D0BCA00BB07DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z4DAU59V98;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ua.advanc3d.SignAppFormExampleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SignAppFormExample;
 			};
 			name = Release;
 		};
@@ -358,11 +566,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BF86E8C029645AFE00C4AC0F /* Build configuration list for PBXNativeTarget "SignUpFormExample" */ = {
+		BF9FE5B2298D0BCA00BB07DC /* Build configuration list for PBXNativeTarget "SignAppFormExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BF86E8C129645AFE00C4AC0F /* Debug */,
-				BF86E8C229645AFE00C4AC0F /* Release */,
+				BF9FE5AC298D0BCA00BB07DC /* Debug */,
+				BF9FE5AD298D0BCA00BB07DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF9FE5B3298D0BCA00BB07DC /* Build configuration list for PBXNativeTarget "SignAppFormExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF9FE5AE298D0BCA00BB07DC /* Debug */,
+				BF9FE5AF298D0BCA00BB07DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF9FE5B4298D0BCA00BB07DC /* Build configuration list for PBXNativeTarget "SignAppFormExampleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF9FE5B0298D0BCA00BB07DC /* Debug */,
+				BF9FE5B1298D0BCA00BB07DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
