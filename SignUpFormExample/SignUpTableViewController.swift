@@ -19,7 +19,7 @@ import Combine
 
 class SignUpTableViewController: UITableViewController {
     
-    //MARK: - Outlets
+    //MARK: - Outlets & Vars
     
     @IBOutlet weak var emailAddressField: FormTextField!
     @IBOutlet weak var passwordField: FormTextField!
@@ -27,11 +27,8 @@ class SignUpTableViewController: UITableViewController {
     @IBOutlet weak var agreeTermsSwitch: UISwitch!
     @IBOutlet weak var signUpButton: BigButton!
     
-    //MARK: - Subjects
-    private var emailSubject = CurrentValueSubject<String, Never>("")
-    private var passwordSubject = CurrentValueSubject<String, Never>("")
-    private var passwordConfirmationSubject = CurrentValueSubject<String, Never>("")
-    private var agreeTermsSubject = CurrentValueSubject<Bool, Never>(false)
+    let viewModel = SignUpViewModel()
+    
     private var cancellables: Set<AnyCancellable> = []
     
     //MARK: - View life cycle
@@ -40,98 +37,43 @@ class SignUpTableViewController: UITableViewController {
         
         emailAddressField.isSecureTextEntry = false
         
-        formIsValid
-            .assign(to: \.isEnabled, on: signUpButton)
-            .store(in: &cancellables)
-        
-        setValidColor(field: emailAddressField, publisher: emailIsValid)
-        setValidColor(field: passwordField, publisher: passwordIsValid)
-        setValidColor(field: passwordConfirmationField, publisher: passwordConfirmationIsVaild)
-        
-        formattedEmailAddress
-            .filter { [unowned self] in $0 != emailSubject.value }
-            .map { $0 as String? }
+        viewModel.$email
             .assign(to: \.text, on: emailAddressField)
             .store(in: &cancellables)
-    }
-    
-    //Coloring fields by rules
-    private func setValidColor<P: Publisher>(field: UITextField, publisher: P) where P.Output == Bool, P.Failure == Never {
-        publisher
-            .map{ $0 ? UIColor.label : UIColor.systemRed }
-            .assign(to: \.textColor, on: field)
+        
+        viewModel.$emailFieldTextColor
+            .assign(to: \.textColor, on: emailAddressField)
             .store(in: &cancellables)
-    }
-    
-    //MARK: - Publishers
-
-    //Form check
-    private var formIsValid: AnyPublisher<Bool, Never> {
-        Publishers.CombineLatest3(emailIsValid,
-                                  passwordAndConfirmationIsValid,
-                                  agreeTermsSubject
-        )
-        .map { $0.0 && $0.1 && $0.2 }
-        .eraseToAnyPublisher()
-    }
-
-    //Email check
-    private var formattedEmailAddress: AnyPublisher<String, Never> {
-        emailSubject
-            .map { $0.lowercased() }
-            .map { $0.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) }
-            .eraseToAnyPublisher()
-    }
-    
-    private var emailIsValid: AnyPublisher<Bool, Never> {
-        formattedEmailAddress
-            .map { [weak self] in self?.isValidEmail($0) }
-            .replaceNil(with: false)
-            .eraseToAnyPublisher()
-    }
-    
-    private func isValidEmail(_ email: String) -> Bool {
-        email.contains("@") && email.contains(".")
-    }
-    
-    //Password check
-    private var passwordAndConfirmationIsValid: AnyPublisher<Bool, Never> {
-        passwordIsValid.combineLatest(passwordConfirmationIsVaild)
-            .map { valid, confirmed in
-                valid && confirmed
-            }
-            .eraseToAnyPublisher()
-    }
-    private var passwordIsValid: AnyPublisher<Bool, Never> {
-        passwordSubject
-            .map { $0 != "password" && $0.count >= 8 }
-            .eraseToAnyPublisher()
-    }
-    
-    private var passwordConfirmationIsVaild: AnyPublisher<Bool, Never> {
-        passwordSubject.combineLatest(passwordConfirmationSubject)
-            .map { password, confirmation in
-                password == confirmation
-            }
-            .eraseToAnyPublisher()
+        
+        viewModel.$passwordFieldTextColor
+            .assign(to: \.textColor, on: passwordField)
+            .store(in: &cancellables)
+        
+        viewModel.$passwordConfirmationFieldTextColor
+            .assign(to: \.textColor, on: passwordConfirmationField)
+            .store(in: &cancellables)
+        
+        viewModel.$signUpButtonEnabled
+            .assign(to: \.isEnabled, on: signUpButton)
+            .store(in: &cancellables)
     }
     
     //MARK: - Actions
     
     @IBAction func emailDidChanged(_ sender: FormTextField) {
-        emailSubject.send(emailAddressField.text ?? "")
+        viewModel.email = emailAddressField.text ?? ""
     }
     
     @IBAction func passwordDidChanged(_ sender: FormTextField) {
-        passwordSubject.send(passwordField.text ?? "")
+        viewModel.password = passwordField.text ?? ""
     }
     
     @IBAction func passwordConfirmationDidChanged(_ sender: FormTextField) {
-        passwordConfirmationSubject.send(passwordConfirmationField.text ?? "")
+        viewModel.passwordConfirmation = passwordConfirmationField.text ?? ""
     }
     
     @IBAction func agreeSwitchDidChanged(_ sender: UISwitch) {
-        agreeTermsSubject.send(agreeTermsSwitch.isOn)
+        viewModel.agreeTerms = agreeTermsSwitch.isOn
     }
     
     @IBAction func signUpTapped(_ sender: BigButton) {
@@ -139,5 +81,4 @@ class SignUpTableViewController: UITableViewController {
         alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel))
         present(alert, animated: true)
     }
-    
 }
