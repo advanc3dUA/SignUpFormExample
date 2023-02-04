@@ -26,15 +26,53 @@ final class SignUpFormExampleTests: XCTestCase {
         cancellables = nil
     }
     
-    func testValidEmail() {
-        var validEmailSignal: Bool?
-        viewModel.emailIsValid
-            .sink { validEmailSignal = $0 }
-            .store(in: &cancellables)
-        viewModel.email = "foo"
-        XCTAssertEqual(validEmailSignal, false)
+    func assertPublisher<P: Publisher>(_ publisher: P, produces expected: P.Output, block: () -> Void) where P.Failure == Never, P.Output: Equatable {
+        let exp = expectation(description: "Publisher received value")
+        exp.assertForOverFulfill = false
         
-        viewModel.email = "foo@bar.com"
-        XCTAssertEqual(validEmailSignal, true)
+        //Arrange
+        var value: P.Output?
+        publisher
+            .handleEvents(receiveCompletion: { _ in
+                exp.fulfill()
+            })
+            
+            .sink {
+                exp.fulfill()
+                value = $0
+            }
+            .store(in: &cancellables)
+        
+        //Act
+        block()
+        
+        wait(for: [exp], timeout: 1.0)
+        
+        //Assertion
+        XCTAssertEqual(value, expected)
+    }
+    
+    func testValidEmail() {
+        assertPublisher(viewModel.emailIsValid, produces: true) {
+            viewModel.email = "foo@bar.com"
+        }
+    }
+    
+    func testInvalidEmail() {
+        assertPublisher(viewModel.emailIsValid, produces: false) {
+            viewModel.email = "foo"
+        }
+    }
+    
+    func testPasswordIsValid() {
+        assertPublisher(viewModel.passwordIsValid, produces: true) {
+            viewModel.password = "123123123"
+        }
+    }
+    
+    func testPasswordIsInvalid() {
+        assertPublisher(viewModel.passwordIsValid, produces: false) {
+            viewModel.password = "123"
+        }
     }
 }
